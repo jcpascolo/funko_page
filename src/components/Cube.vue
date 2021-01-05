@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <div id="cube" :class="{ active: isActive }">
-      <div class="front"><img src="../assets/images/venomized/png_1_front.png" alt="Ironman Venomized front"></div>
-      <div class="back"><img src="../assets/images/venomized/png_3_back.png" alt="Ironman Venomized back"></div>
-      <div class="left"><img src="../assets/images/venomized/png_4_right.png" alt="Ironman Venomized right"></div>
-      <div class="right"><img src="../assets/images/venomized/png_2_left.png" alt="Ironman Venomized left"></div>
+      <div class="front"><img src="../assets/images/venomized/1_front.jpg" alt="Ironman Venomized front"></div>
+      <div class="back"><img src="../assets/images/venomized/3_back.jpg" alt="Ironman Venomized back"></div>
+      <div class="left"><img src="../assets/images/venomized/2_left.jpg" alt="Ironman Venomized left"></div>
+      <div class="right"><img src="../assets/images/venomized/4_right.jpg" alt="Ironman Venomized right"></div>
     </div>
   </div>
 </template>
@@ -13,12 +13,8 @@
 export default {
   name: 'Cube',
   props: {
-    name: String
-  },
-  data() {
-    return {
-      isActive: true
-    }
+    color: String,
+    isActive: Boolean
   }
 }
 </script>
@@ -27,8 +23,8 @@ export default {
 <style scoped>
 
 .container {
-  width: 150px;
-  height: 200px;
+  width: 116px;
+  height: 160px;
   position: relative;
   -webkit-perspective: 1000px;
   -moz-perspective: 1000px;
@@ -43,19 +39,28 @@ export default {
 }
 
 #cube img {
-  max-width: 137px;
-  max-height: 183px;
   display: block;
   position: absolute;
-  top: 7px;
-  left: 6px;
   border: none;
-  background-color: #2c3e50;
+}
+
+#cube .front img, #cube .back img {
+  width: 116px;
+  height: 160px;
+  max-width: 116px;
+  max-height: 160px;
+}
+
+#cube .left img, #cube .right img {
+  width: 90px;
+  height: 160px;
+  max-width: 90px;
+  max-height: 160px;
 }
 
 .active {   
   -webkit-animation: rotatecube 15s infinite linear;
-  -moz-animation: rotatecube 15s infinite linear;
+  -moz-animation: rotatecube 15s infinite linear; 
 }
 
 @-webkit-keyframes rotatecube {
@@ -63,7 +68,7 @@ export default {
     -webkit-transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg);
   }
   to {
-    -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    -webkit-transform: rotateX(0deg) rotateX(0deg) rotateZ(0deg);
   }
   /* 0% { -webkit-transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg); }
   25% { -webkit-transform: rotateX(0deg) rotateY(270deg) rotateZ(0deg); }
@@ -88,23 +93,23 @@ export default {
 
 
 #cube .front  {
-  -webkit-transform: rotateY(0deg ) translateZ( 68px );
-  -moz-transform: rotateY( 0deg ) translateZ( 68px );
+  -webkit-transform: translateZ( 45px );
+  -moz-transform: translateZ( 45px );
 }
 #cube .back {
   display: none;
-  -webkit-transform: translateZ( -68px );
-  -moz-transform: translateZ( -68px );
+  -webkit-transform: translateZ( -45px );
+  -moz-transform: translateZ( -45px );
 }
 #cube .right  {
   display: none;
-  -webkit-transform: rotateY(  90deg ) translateZ( 68px );
-  -moz-transform: rotateY(  90deg ) translateZ( 68px );
+  -webkit-transform: rotateY(  90deg ) translateX(13px) translateZ( 58px );
+  -moz-transform: rotateY(  90deg ) translateX(13px) translateZ( 58px );
 }
 #cube .left   {
   display: none;
-  -webkit-transform: rotateY( -90deg ) translateZ( 68px );
-  -moz-transform: rotateY( -90deg ) translateZ( 68px );
+  -webkit-transform: rotateY( -90deg ) translateX(13px) translateZ( 58px );
+  -moz-transform: rotateY( -90deg ) translateX(13px) translateZ( 58px );
 }
 
 #cube.active .back  {

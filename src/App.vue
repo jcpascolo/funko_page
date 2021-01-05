@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <FunkoCard name="Venomized"/>
+    <FunkoCard name="Venomized" color="#aa0505"/>
   </div>
 </template>
 
@@ -16,13 +16,10 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-  background-color: #2c3e50;
+@font-face {
+  font-family: "IronMan";
+  src: local("IronMan"),
+    url("./assets/fonts/ironman_war.ttf") format("truetype");
 }
+
 </style>
