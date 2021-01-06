@@ -70,11 +70,6 @@ export default {
   to {
     -webkit-transform: rotateX(0deg) rotateX(0deg) rotateZ(0deg);
   }
-  /* 0% { -webkit-transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg); }
-  25% { -webkit-transform: rotateX(0deg) rotateY(270deg) rotateZ(0deg); }
-  50% { -webkit-transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg); }
-  75% { -webkit-transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg); }
-  100% { -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); } */
 }
 
 @-moz-keyframes rotatecube {
@@ -84,11 +79,6 @@ export default {
   to {
     -moz-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
   }
-  /* 0% { -moz-transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg); }
-  25% { -moz-transform: rotateX(0deg) rotateY(270deg) rotateZ(0deg); }
-  50% { -moz-transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg); }
-  75% { -moz-transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg); }
-  100% { -moz-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); } */
 }
 
 

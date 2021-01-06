@@ -1,16 +1,42 @@
 <template>
   <div id="app">
-    <FunkoCard name="Venomized" color="#aa0505"/>
+    <div class="landing-page fullpage" >
+      <div class="left-side fullpage" :class="{'open': this.isOpen}">
+        <h1 class="iron-font">IRON</h1>
+      </div>      
+      <ArcReactor class="logo center" :class="{'open': this.isOpen}" v-on:click.native="openLanding" :isOpen="this.isOpen"/>      
+      <div ref="rightSide" class="right-side fullpage" :class="{'open': this.isOpen}">
+        <h1 class="iron-font">MAN</h1>
+      </div>
+    </div>
+    <div class="funko-page fullpage">
+      <FunkoCard name="Venomized" color="#aa0505"/>
+      <FunkoCard name="Venomized" color="#aa0505"/>
+      <FunkoCard name="Venomized" color="#aa0505"/>
+      <FunkoCard name="Venomized" color="#aa0505"/>
+    </div>    
   </div>
 </template>
 
 <script>
 import FunkoCard from './components/FunkoCard.vue'
+import ArcReactor from './components/ArcReactor.vue'
 
 export default {
   name: 'App',
   components: {
-    FunkoCard
+    FunkoCard,
+    ArcReactor
+  },
+  data() {
+    return {
+      isOpen: false
+    }
+  },
+  methods: {
+    openLanding() {
+      this.isOpen = !this.isOpen      
+    }
   }
 }
 </script>
@@ -22,4 +48,120 @@ export default {
     url("./assets/fonts/ironman_war.ttf") format("truetype");
 }
 
+:root {
+  --metal-black: #4b0908;
+  --metal-dark-red: #6a0c0b;
+  --metal-red: #aa0505;
+  --metal-yellow: #fbca03;
+  --metal-orange: #b97d10;
+  --logo-glow-color: #01cbfead;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#app {
+  height: 100vh;
+  width: calc(100vw - (100vw - 100%));
+  position: relative;
+}
+
+.fullpage {
+  height: 100%;
+  width: 100%;
+}
+
+.center {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.iron-font {
+  font-family: "IronMan";
+}
+
+.landing-page {
+  position: relative;
+  overflow: hidden;
+}
+
+.right-side {
+  background-color: var(--metal-yellow);
+  color: var(--metal-red);
+  position: absolute;
+  z-index: 2;
+  clip-path: polygon(0 99%, 100% 0, 100% 100%, 0 100%);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  transition: transform 2s linear;
+}
+
+.right-side.open {
+  transform: translateX(100vw);
+}
+
+.left-side {
+  background-color: var(--metal-red);
+  color: var(--metal-yellow);
+  position: absolute;
+  z-index: 2;
+  clip-path: polygon(0 0, 100% 0%, 0 100%, 0% 100%);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  transition: transform 2s linear;
+}
+
+.left-side.open {
+  transform: translateX(-100vw);
+}
+
+.left-side h1, .right-side h1 {
+  width: 50%;
+  text-align: center;
+  position: relative;
+  font-size: 125px;
+}
+
+.left-side h1 {
+  padding-left: 150px;
+}
+
+.right-side h1 {
+  padding-right: 150px;
+}
+
+.logo {
+  z-index: 3;
+  cursor: pointer;
+  transition: transform 1s linear;
+  transition-delay: 1s;
+}
+
+.logo.open {
+  transform: translateX(-50vw);
+  transition: transform 1s linear;
+}
+
+.funko-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 10px 10px 10px 125px;
+}
 </style>
