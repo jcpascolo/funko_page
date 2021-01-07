@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <div id="cube" :class="{ active: isActive }">
-      <div class="front"><img src="../assets/images/venomized/1_front.jpg" alt="Ironman Venomized front"></div>
-      <div class="back"><img src="../assets/images/venomized/3_back.jpg" alt="Ironman Venomized back"></div>
-      <div class="left"><img src="../assets/images/venomized/2_left.jpg" alt="Ironman Venomized left"></div>
-      <div class="right"><img src="../assets/images/venomized/4_right.jpg" alt="Ironman Venomized right"></div>
+      <div class="front"><img :src="require(`@/assets/images/${this.foldername}/1_front.jpg`)" alt="Ironman Venomized front"></div>
+      <div class="back"><img :src="require(`@/assets/images/${this.foldername}/3_back.jpg`)" alt="Ironman Venomized back"></div>
+      <div class="left"><img :src="require(`@/assets/images/${this.foldername}/2_left.jpg`)" alt="Ironman Venomized left"></div>
+      <div class="right"><img :src="require(`@/assets/images/${this.foldername}/4_right.jpg`)" alt="Ironman Venomized right"></div>
     </div>
   </div>
 </template>
@@ -13,8 +13,14 @@
 export default {
   name: 'Cube',
   props: {
+    name: String,
     color: String,
     isActive: Boolean
+  },
+  data() {
+    return {
+      foldername: this.name.replaceAll(" ", "_")
+    }
   }
 }
 </script>

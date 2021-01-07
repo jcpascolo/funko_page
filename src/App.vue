@@ -10,22 +10,13 @@
       </div>
     </div>
     <div class="funko-page fullpage">
-      <FunkoCard name="Venomized" color="#aa0505"/>
-      <FunkoCard name="Venomized" color="#aa0505"/>
-      <FunkoCard name="Venomized" color="#aa0505"/>
-      <FunkoCard name="Venomized" color="#aa0505"/>
-      <FunkoCard name="Venomized" color="#aa0505"/>
-      <FunkoCard name="Venomized" color="#aa0505"/>
-      <FunkoCard name="Venomized" color="#aa0505"/>
-      <FunkoCard name="Venomized" color="#aa0505"/>
-      <FunkoCard name="Venomized" color="#aa0505"/>
-      <FunkoCard name="Venomized" color="#aa0505"/>
-      <FunkoCard name="Venomized" color="#aa0505"/>
-      <FunkoCard name="Venomized" color="#aa0505"/>
-      <FunkoCard name="Venomized" color="#aa0505"/>
-      <FunkoCard name="Venomized" color="#aa0505"/>
-      <FunkoCard name="Venomized" color="#aa0505"/>
-      <FunkoCard name="Venomized" color="#aa0505"/>
+      <FunkoCard v-for="funko in funkos" 
+        :key="funko.id" 
+        class="funko-page__funko-card" 
+        :id="funko.id" 
+        :name="funko.name" 
+        :color="funko.color"
+      />
     </div>    
   </div>
 </template>
@@ -42,7 +33,39 @@ export default {
   },
   data() {
     return {
-      isOpen: false
+      isOpen: false,
+      funkos: [
+        {
+          id: 1,
+          name: "venomized",
+          color: "#aa0505"
+        },
+        {
+          id: 2,
+          name: "hulkbuster",
+          color: "#fbca03"
+        },
+        {
+          id: 3,
+          name: "i am ironman",
+          color: "#b97d10"
+        },
+        {
+          id: 4,
+          name: "gameverse",
+          color: "#aa0505"
+        },
+        {
+          id: 5,
+          name: "glove",
+          color: "#fbca03"
+        },
+        {
+          id: 6,
+          name: "wings",
+          color: "#b97d10"
+        },
+      ]
     }
   },
   methods: {
@@ -61,7 +84,7 @@ export default {
 }
 
 :root {
-  --metal-black: #4b0908;
+  --metal-black: rgb(30, 25, 25);
   --metal-dark-red: #6a0c0b;
   --metal-red: #aa0505;
   --metal-yellow: #fbca03;
@@ -182,8 +205,13 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  background-color: var(--metal-black);
 }
 
+.funko-page__funko-card {
+  min-height: 280px;
+  margin: 0px 12px 20px 12px;
+}
 
 
 @media (max-width: 1199.98px) {  

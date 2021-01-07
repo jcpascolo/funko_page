@@ -1,7 +1,7 @@
 <template>
-  <div class="funko-card" @mouseenter="mouseenter" @mouseleave="mouseleave">
+  <div :id="'funkoCard'+this.id" class="funko-card" @mouseenter="mouseenter" @mouseleave="mouseleave">
     <div class="funko-card__image" :style="'background-color: ' + this.color">
-      <Cube class="funko-card__image-cube" :color="this.color" :isActive="this.isHover"/>
+      <Cube class="funko-card__image-cube" :name="this.name" :color="this.color" :isActive="this.isHover"/>
       <div class="funko-card__clip-path"><span class="iron-font">{{this.name}}</span></div>
     </div>
     <div class="funko-card__name">
@@ -19,7 +19,8 @@ export default {
   },
   props: {
     name: String,
-    color: String
+    color: String,
+    id: Number
   },
   data() {
     return {
@@ -38,6 +39,10 @@ export default {
       this.isHover = false;
       this.hasLeave = true;
     }
+  },
+  mounted() {
+    let styleElem = document.head.appendChild(document.createElement("style"));
+    styleElem.innerHTML = `#funkoCard${this.id}:after {background-color: ${this.color} }`;
   }
 }
 </script>
@@ -49,6 +54,27 @@ export default {
   height: 220px;
   border-radius: 10px;
   position: relative;
+}
+
+.funko-card:after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  z-index: -1;
+  filter: blur(10px);
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  transition: opacity 0.4s ease;
+  opacity: 0;
+  transition-delay: 0s;
+}
+
+.funko-card:hover:after {  
+  opacity: 1;
+  transition-delay: 1s;
 }
 
 .funko-card__image {
@@ -109,11 +135,11 @@ export default {
   align-items: flex-end;
   color: white;
   padding-bottom: 10px;
-  bottom: 0px;
+  bottom: -1px;
   z-index: 3;
   height: 150px;
   width: 225px;
-  border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 8px;
   clip-path: polygon(0 74%, 100% 58%, 100% 100%, 0% 100%);
   transition: clip-path 0.5s linear;
   transition-delay: 0.2s;
