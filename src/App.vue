@@ -14,6 +14,18 @@
       <FunkoCard name="Venomized" color="#aa0505"/>
       <FunkoCard name="Venomized" color="#aa0505"/>
       <FunkoCard name="Venomized" color="#aa0505"/>
+      <FunkoCard name="Venomized" color="#aa0505"/>
+      <FunkoCard name="Venomized" color="#aa0505"/>
+      <FunkoCard name="Venomized" color="#aa0505"/>
+      <FunkoCard name="Venomized" color="#aa0505"/>
+      <FunkoCard name="Venomized" color="#aa0505"/>
+      <FunkoCard name="Venomized" color="#aa0505"/>
+      <FunkoCard name="Venomized" color="#aa0505"/>
+      <FunkoCard name="Venomized" color="#aa0505"/>
+      <FunkoCard name="Venomized" color="#aa0505"/>
+      <FunkoCard name="Venomized" color="#aa0505"/>
+      <FunkoCard name="Venomized" color="#aa0505"/>
+      <FunkoCard name="Venomized" color="#aa0505"/>
     </div>    
   </div>
 </template>
@@ -131,19 +143,22 @@ export default {
 }
 
 .left-side h1, .right-side h1 {
-  width: 50%;
+  width: calc(50% - 100px);
   text-align: center;
   position: relative;
   font-size: 125px;
+  height: 95px;
 }
 
 .left-side h1 {
-  padding-left: 150px;
+  text-align: right;
+  padding-right: 32px;
 }
 
 .right-side h1 {
-  padding-right: 150px;
-}
+  text-align: left;
+  padding-left: 32px;
+}  
 
 .logo {
   z-index: 3;
@@ -159,9 +174,67 @@ export default {
 
 .funko-page {
   position: absolute;
+  overflow: scroll;
   top: 0;
   left: 0;
   z-index: 1;
   padding: 10px 10px 10px 125px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
+
+
+
+@media (max-width: 1199.98px) {  
+  .left-side h1 {
+    padding-right: 10px;
+  }
+
+  .right-side h1 {
+    padding-left: 10px;
+  } 
+}
+
+@media (max-width: 991.98px) {
+  .left-side h1 {
+    padding-right: 6px;
+  }
+
+  .right-side h1 {
+    padding-left: 6px;
+  } 
+}
+
+@media (max-width: 767.98px) {
+  .funko-page {
+    padding: 10px 10px 10px 75px;
+  }
+
+  .logo.open {
+    transform: translateX(-60vw);
+  }
+
+  .left-side h1, .right-side h1 {
+    font-size: 110px;
+    height: 85px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .left-side h1, .right-side h1 {
+    width: 75%;
+  }
+
+  .right-side {
+    align-items: flex-end;
+    padding-bottom: calc((50vh - 100px)/4);
+  }
+
+  .left-side {
+    align-items: flex-start;
+    padding-top: calc((50vh - 100px)/4);
+  }
+}
+
 </style>
