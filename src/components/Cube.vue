@@ -19,7 +19,7 @@ export default {
   },
   data() {
     return {
-      foldername: this.name.replaceAll(" ", "_")
+      foldername: this.name.split(" ").join("_")
     }
   }
 }

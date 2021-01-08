@@ -22,6 +22,8 @@
 </template>
 
 <script>
+import json from './assets/funkos.json'
+
 import FunkoCard from './components/FunkoCard.vue'
 import ArcReactor from './components/ArcReactor.vue'
 
@@ -34,38 +36,7 @@ export default {
   data() {
     return {
       isOpen: false,
-      funkos: [
-        {
-          id: 1,
-          name: "venomized",
-          color: "#aa0505"
-        },
-        {
-          id: 2,
-          name: "hulkbuster",
-          color: "#fbca03"
-        },
-        {
-          id: 3,
-          name: "i am ironman",
-          color: "#b97d10"
-        },
-        {
-          id: 4,
-          name: "gameverse",
-          color: "#aa0505"
-        },
-        {
-          id: 5,
-          name: "glove",
-          color: "#fbca03"
-        },
-        {
-          id: 6,
-          name: "wings",
-          color: "#b97d10"
-        },
-      ]
+      funkos: json["funkos"]
     }
   },
   methods: {
