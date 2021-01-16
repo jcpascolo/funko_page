@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <div id="cube" :class="{ active: isActive }">
-      <div class="front"><img :src="require(`@/assets/images/${this.foldername}/1_front.jpg`)" alt="Ironman Venomized front"></div>
-      <div class="back"><img :src="require(`@/assets/images/${this.foldername}/3_back.jpg`)" alt="Ironman Venomized back"></div>
-      <div class="left"><img :src="require(`@/assets/images/${this.foldername}/2_left.jpg`)" alt="Ironman Venomized left"></div>
-      <div class="right"><img :src="require(`@/assets/images/${this.foldername}/4_right.jpg`)" alt="Ironman Venomized right"></div>
+      <div class="front"><img loading="lazy" :src="require(`@/assets/images/${this.foldername}/1_front.jpg`)" :alt="`Ironman ${this.name} front`"></div>
+      <div class="back"><img loading="lazy" :src="require(`@/assets/images/${this.foldername}/3_back.jpg`)" :alt="`Ironman ${this.name} back`"></div>
+      <div class="left"><img loading="lazy" :src="require(`@/assets/images/${this.foldername}/2_left.jpg`)" :alt="`Ironman ${this.name} left`"></div>
+      <div class="right"><img loading="lazy" :src="require(`@/assets/images/${this.foldername}/4_right.jpg`)" :alt="`Ironman ${this.name} right`"></div>
     </div>
   </div>
 </template>
@@ -67,6 +67,8 @@ export default {
 .active {   
   -webkit-animation: rotatecube 15s infinite linear;
   -moz-animation: rotatecube 15s infinite linear; 
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
 }
 
 @-webkit-keyframes rotatecube {

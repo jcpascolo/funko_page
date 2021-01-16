@@ -1,54 +1,70 @@
 {
     "funkos": [
         {
+            "id": 649,
+            "name": "comiced",
+            "color": "#fbca03",
+            "acquiredDate": 20210106
+        },
+        {
             "id": 365,
             "name": "venomized",
-            "color": "#012be0"
+            "color": "#012be0",
+            "acquiredDate": 20190512
         },
         {
             "id": 294,
             "name": "hulkbuster",
-            "color": "#d1a905"
-        },
-        {
-            "id": 580,
-            "name": "i am ironman",
-            "color": "#f9001b"
+            "color": "#d1a905",
+            "acquiredDate": 20181225
         },
         {
             "id": 226,
             "name": "spidey mentor",
-            "color": "#8203d9"
+            "color": "#8203d9",
+            "acquiredDate": 20200106
         },
         {
             "id": 626,
             "name": "gameverse",
-            "color": "#00cd7c"
+            "color": "#00cd7c",
+            "acquiredDate": 20200807
         },
         {
             "id": 529,
             "name": "glove",
-            "color": "#d66e1e"
+            "color": "#d66e1e",
+            "acquiredDate": 20201225
+        },
+        {
+            "id": 580,
+            "name": "i am ironman",
+            "color": "#f9001b",
+            "acquiredDate": 20201225
         },
         {
             "id": 285,
             "name": "wings",
-            "color": "#b97d10"
+            "color": "#b97d10",
+            "acquiredDate": 20181114
         },
         {
             "id": 4,
             "name": "original",
-            "color": "#2c99dc"
+            "color": "#2c99dc",
+            "acquiredDate": 20170106
         },
         {
             "id": 375,
             "name": "golden",
-            "color": "#aa0505"
+            "color": "#aa0505",
+            "acquiredDate": 20180106
         },
         {
             "id": 449,
             "name": "timetraveler",
-            "color": "#fbca03"
+            "color": "#fbca03",
+            "acquiredDate": 20191114
         }
     ]
 }

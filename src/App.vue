@@ -35,8 +35,16 @@ export default {
   },
   data() {
     return {
-      isOpen: false,
-      funkos: json["funkos"]
+      isOpen: false
+    }
+  },
+  computed: {
+    funkos: () => {
+      return json["funkos"].sort((firts, second) => {
+        if (firts.acquiredDate > second.acquiredDate) { return 1; }
+        if (firts.acquiredDate < second.acquiredDate) { return -1; }
+        return 0
+      }).reverse()
     }
   },
   methods: {
