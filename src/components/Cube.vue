@@ -65,8 +65,8 @@ export default {
 }
 
 .active {   
-  -webkit-animation: rotatecube 15s infinite linear;
-  -moz-animation: rotatecube 15s infinite linear; 
+  -webkit-animation: rotatecube 12s infinite linear;
+  -moz-animation: rotatecube 12s infinite linear; 
   -webkit-animation-delay: 0.5s;
   -moz-animation-delay: 0.5s;
 }
