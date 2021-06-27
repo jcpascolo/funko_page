@@ -154,12 +154,12 @@ export default {
 
 .left-side h1 {
   text-align: right;
-  padding-right: 32px;
+  padding-right: 10vw;
 }
 
 .right-side h1 {
   text-align: left;
-  padding-left: 32px;
+  padding-left: 10vw;
 }  
 
 .logo {
@@ -193,24 +193,14 @@ export default {
 }
 
 
-@media (max-width: 1199.98px) {  
-  .left-side h1 {
-    padding-right: 10px;
-  }
-
-  .right-side h1 {
-    padding-left: 10px;
-  } 
-}
-
 @media (max-width: 991.98px) {
   .left-side h1 {
-    padding-right: 6px;
+    padding-right: 4.75vw;
   }
 
   .right-side h1 {
-    padding-left: 6px;
-  } 
+    padding-left: 4.75vw;
+  }
 }
 
 @media (max-width: 767.98px) {
